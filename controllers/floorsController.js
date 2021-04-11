@@ -11,8 +11,7 @@ exports.createFloor = async (req, res) => {
 }
 
 exports.getFloor = async (req, res) => {
-    const { floor } = req.body;
-    Floors.find({ floor }).then((data) => {
+    Floors.find().then((data) => {
         res.json(data);
     }).catch((err) => {
         res.json(err)
