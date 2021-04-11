@@ -11,6 +11,7 @@ dotenv.config({path: __dirname + '/.env'});
 
 var usersRouter = require('./routes/user');
 var floorsRouter = require('./routes/floor');
+var logsRouter = require('./routes/log');
 
 var app = express();
 const db = require('./controllers/helper/db')();
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //routess
 app.use('/users', usersRouter);
 app.use('/floors', floorsRouter);
+app.use('/logs', logsRouter);
 
 //swagger ui docs
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
