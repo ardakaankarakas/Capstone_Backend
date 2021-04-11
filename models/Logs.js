@@ -13,6 +13,11 @@ const LogSchema = new Schema({
     floor: { 
         type: String,
         required: [true, '{PATH} is necessary.'],
+    },
+    createdAt: { // otomatik oluşturma tarihini atar
+        type: Date,
+        default: new Date(),
+        required: [true, '{PATH} is necessary.'],
     }
 });
 
