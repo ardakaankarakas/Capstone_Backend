@@ -10,6 +10,7 @@ const cors = require('cors');
 dotenv.config({path: __dirname + '/.env'});
 
 var usersRouter = require('./routes/user');
+var floorsRouter = require('./routes/floor');
 
 var app = express();
 const db = require('./controllers/helper/db')();
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //routess
 app.use('/users', usersRouter);
+app.use('/floors', floorsRouter);
 
 //swagger ui docs
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
